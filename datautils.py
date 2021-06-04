@@ -17,6 +17,12 @@ class DataFile:
     @property
     def txt(self):
         return self.path + '.txt'
+    @property
+    def embeddings(self):
+        return self.path + '-EMB.json'
+    @property
+    def base_name(self):
+        return os.path.basename(self.path)
 
     def __repr__(self):
         return self.path

@@ -33,7 +33,7 @@ def main():
     all_embeddings_gen = scibert.gen_span_embeddings(all_texts, all_spans, args.batchsize)
     
     for df, embeddings, ent_ids in tqdm(zip(datafiles, all_embeddings_gen, all_ent_ids), desc='Generating and saving', total=len(all_texts)):
-        with open(df.path + '-EMB.json', 'w') as output_file:
+        with open(df.embeddings, 'w') as output_file:
             data = {eid: emb for eid, emb in zip(ent_ids, embeddings)} 
             json.dump(data, output_file)
 

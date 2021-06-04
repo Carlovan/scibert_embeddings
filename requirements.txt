@@ -1,3 +1,4 @@
 tqdm
 transformers
 torch
+networkx
